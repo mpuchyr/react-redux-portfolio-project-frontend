@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-function App(props) {
-  return (
-    <div className="App">
-      <p>{props.movies[0].title}</p>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    console.log("Mounted!")
+  }
+  render() {
+    return (
+      <div className="App">
+  
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
   return {
-    movies: state.movieState.movies
+    movies: state.movieState.movies,
+    loading: state.movieState.loading
   }
 }
 
