@@ -4,7 +4,7 @@ import { fetchMovies } from './actions'
 
 class App extends Component {
   componentDidMount() {
-    console.log("Mounted!")
+    this.props.fetchMovies()
   }
 
   render() {
