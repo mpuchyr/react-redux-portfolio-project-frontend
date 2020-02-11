@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 
 class Home extends Component {
-    
-    showPosters = () => {
+    renderMoviePosters = () => {
         if (this.props.loading) {
-            <p>Loading Movies...</p>
+            return <p>Loading...</p>
         } else {
             return this.props.movies.map(movie => {
-                return <img src={movie.poster_src} alt={movie.title} />
+                return <img src={movie.poster_url} key={movie.id} alt={movie.title}></img>
             })
         }
     }
-    
+
     render() {
         return(
             <div>
                 <h1>Movie Archive</h1>
-                
+                {this.renderMoviePosters()}
             </div>
         )
     }

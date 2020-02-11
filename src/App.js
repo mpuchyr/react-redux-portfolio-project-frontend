@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchMovies } from './actions'
+import Home from './containers/Home'
 
 class App extends Component {
   componentDidMount() {
@@ -10,6 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Home movies={this.props.movies} loading={this.props.loading}/>
       </div>
     );
   }
