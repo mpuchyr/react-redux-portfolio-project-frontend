@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchMovies } from './actions'
 import Home from './containers/Home'
+import MovieShow from './containers/MovieShow'
 
 class App extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" render={ props => <Home {...props} movies={this.props.movies} loading={this.props.loading}/>} />
+            <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
           </Switch>
         </div>
       </Router>
