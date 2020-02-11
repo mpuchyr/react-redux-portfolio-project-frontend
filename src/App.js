@@ -5,6 +5,7 @@ class App extends Component {
   componentDidMount() {
     console.log("Mounted!")
   }
+  
   render() {
     return (
       <div className="App">
