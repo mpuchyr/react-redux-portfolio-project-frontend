@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchMovies } from './actions'
 import Home from './containers/Home'
@@ -10,9 +11,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Home movies={this.props.movies} loading={this.props.loading}/>
-      </div>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" render={ props => <Home {...props} movies={this.props.movies} loading={this.props.loading}/>} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
