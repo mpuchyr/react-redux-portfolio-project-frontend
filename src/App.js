@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { fetchMovies } from './actions'
 
 class App extends Component {
   componentDidMount() {
     console.log("Mounted!")
   }
-  
+
   render() {
     return (
       <div className="App">
@@ -22,4 +23,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchMovies: movies => dispatch(fetchMovies(movies))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
