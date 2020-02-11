@@ -6,9 +6,8 @@ export default(state = {movies: [], loading: false}, action) => {
                 movies: [...state.movies],
                 loading: true
             }
-        case 'ADD_MOVIES':
+        case 'SET_MOVIES':
             return {
-                ...state,
                 movies: action.payload,
                 loading: false
             }
