@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class Home extends Component {
     renderMoviePosters = () => {
@@ -6,7 +7,8 @@ class Home extends Component {
             return <p>Loading...</p>
         } else {
             return this.props.movies.map(movie => {
-                return <img src={movie.poster_url} key={movie.id} alt={movie.title}></img>
+                const link = `/movies/${movie.id}`
+                return <NavLink to={link} key={movie.id}><img src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
             })
         }
     }
