@@ -11,7 +11,7 @@ class MovieShow extends Component {
             if (movie) {
                 return (
                     <div>
-                        <img src={movie.poster_url} alt={movie.title}></img>
+                        <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
                     </div>
