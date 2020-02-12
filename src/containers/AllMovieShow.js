@@ -6,6 +6,7 @@ import { fetchMovies, fetchGenres } from '../actions'
 class AllMovieShow extends Component {
 
     componentDidMount() {
+        this.props.fetchMovies()
         this.props.fetchGenres()
     }
 

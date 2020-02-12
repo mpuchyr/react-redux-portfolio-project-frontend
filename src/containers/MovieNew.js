@@ -10,7 +10,7 @@ class MovieNew extends Component {
             title: '',
             synopsis: '',
             poster_url: '',
-            genre: ''
+            genre: 'Action'
         }
     }
 
@@ -27,7 +27,7 @@ class MovieNew extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.addMovie(this.state)
-        this.props.history.push('/')
+        this.props.history.push('/movies')
     }
 
     populateGenres = () => {
@@ -57,7 +57,7 @@ class MovieNew extends Component {
             
 
 
-                <select name="genre" id="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
+                <select name="genre" id="genre" placeholder="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
                 
                 <input type="submit" value="Add Movie"></input>
             </form>
