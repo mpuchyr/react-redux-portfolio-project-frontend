@@ -38,4 +38,10 @@ class MovieNew extends Component {
     }
 }
 
-export default connect()(MovieNew)
+const mapDispatchToProps = dispatch => {
+    return {
+        addMovie: movie => dispatch(addMovie(movie))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(MovieNew)
