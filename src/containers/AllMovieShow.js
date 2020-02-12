@@ -13,12 +13,24 @@ class AllMovieShow extends Component {
 
         return this.props.genres.map(genre => {
             return (
-                <h1 key={genre.id}>{genre.name}</h1>
-
+                <div>
+                    <h1 key={genre.id}>{genre.name}</h1>
+                
+                    {this.showMoviesInGenre(genre.id)}
+                </div>
             )
+                
+                
         })
     }
 
+    showMoviesInGenre = (genreId) => {
+        return this.props.movies.map(movie => {
+            if (movie.genre_id === genreId) {
+                return <img key={movie.id} src={movie.poster_url} alt={movie.title}></img>
+            }
+        })
+    }
 
     render() {
         return (
