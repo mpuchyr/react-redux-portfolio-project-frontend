@@ -31,9 +31,18 @@ class MovieNew extends Component {
     }
 
     populateGenres = () => {
+        let genres = this.props.genres.sort( (a, b) => {
+            if (a.name < b.name) {
+                return -1
+            } else if (a.name > b.name) {
+                return 1
+            } else {
+                return 0
+            }
+        })
         return (
 
-                 this.props.genres.map(genre => {
+                 genres.map(genre => {
                         return (
                             <option value={genre.name} key={genre.id}>{genre.name}</option>
                         )
