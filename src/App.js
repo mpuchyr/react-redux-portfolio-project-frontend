@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchMovies } from './actions'
 import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import MovieShow from './containers/MovieShow'
-
+import MovieNew from './containers/MovieNew'
+import { fetchMovies } from './actions'
 class App extends Component {
+
   componentDidMount() {
     this.props.fetchMovies()
   }
 
   render() {
+
+  
+
     return (
       <Router>
         <NavBar />
         <div>
           <Switch>
-            <Route exact path="/" render={ props => <Home {...props} movies={this.props.movies} loading={this.props.loading}/>} />
+            <Route exact path="/" render={ props => <Home {...props}  movies={this.props.movies} loading={this.props.loading}/>} />
+            <Route exact path="/movies/new" component={ MovieNew } />
             <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
           </Switch>
         </div>
@@ -39,4 +44,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+

@@ -13,10 +13,12 @@ export default(state = {movies: [], loading: false}, action) => {
                 loading: false
             }
         case 'ADD_MOVIE':
-            return {
+            let newState = {
                 ...state,
-                movies: [...state.movies, action.payload],
-            }
+                movies: [...state.movies, action.payload]
+            }    
+        
+            return newState
         default:
             return state
     }

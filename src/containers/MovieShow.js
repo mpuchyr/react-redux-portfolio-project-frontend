@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
+
 class MovieShow extends Component {
+
 
     showMovie = () => {
         if (this.props.movies.length > 0) {
@@ -33,5 +35,7 @@ class MovieShow extends Component {
         )
     }
 }
+
+
 
 export default MovieShow
