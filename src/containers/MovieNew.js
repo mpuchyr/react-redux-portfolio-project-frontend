@@ -35,7 +35,7 @@ class MovieNew extends Component {
                 <input type="text" name="title" id="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)} placeholder="title"/>
             
         
-                <input type="textarea" name="synopsis" id="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)} placeholder="synopsis"/>
+                <input type="text" name="synopsis" id="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)} placeholder="synopsis"/>
             
         
                 <input type="text" name="poster_url" id="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)} placeholder="image link"/>

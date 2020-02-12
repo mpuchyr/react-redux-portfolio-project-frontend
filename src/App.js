@@ -21,7 +21,7 @@ class App extends Component {
         <NavBar />
         <div>
           <Switch>
-            <Route exact path="/" render={ props => <Home {...props}  movies={this.props.movies} loading={this.props.loading}/>} />
+            <Route exact path="/" component={ Home } />
             <Route exact path="/movies/new" component={ MovieNew } />
             <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
           </Switch>
