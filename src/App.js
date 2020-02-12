@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchMovies } from './actions'
+import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import MovieShow from './containers/MovieShow'
 
@@ -13,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <NavBar />
         <div>
           <Switch>
             <Route exact path="/" render={ props => <Home {...props} movies={this.props.movies} loading={this.props.loading}/>} />
