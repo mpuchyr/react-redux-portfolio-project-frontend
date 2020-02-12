@@ -19,9 +19,15 @@ class MovieNew extends Component {
         })
     }
 
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.props.addMovie(this.state)
+    }
+
+
     render() {
         return (
-            <form>
+            <form onSumbit={this.handleOnSubmit}>
                 <h3>Add a Movie</h3>
                 <input type="text" name="title" id="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)}/>
                 <input type="textarea" name="synopsis" id="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)}/>
