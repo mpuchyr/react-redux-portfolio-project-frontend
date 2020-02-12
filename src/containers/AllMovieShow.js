@@ -27,7 +27,8 @@ class AllMovieShow extends Component {
     showMoviesInGenre = (genreId) => {
         return this.props.movies.map(movie => {
             if (movie.genre_id === genreId) {
-                return <img key={movie.id} src={movie.poster_url} alt={movie.title}></img>
+                const link = `/movies/${movie.id}`
+                return <NavLink to={link} key={movie.id}><img src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
             }
         })
     }
