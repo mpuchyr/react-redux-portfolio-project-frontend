@@ -9,10 +9,22 @@ class AllMovieShow extends Component {
         this.props.fetchGenres()
     }
 
+    displayByGenre = () => {
+
+        return this.props.genres.map(genre => {
+            return (
+                <h1 key={genre.id}>{genre.name}</h1>
+
+            )
+        })
+    }
+
+
     render() {
-        console.log(this.props)
         return (
-            <div></div>
+            <div>
+                {this.displayByGenre()}
+            </div>
         )
     }
 }
