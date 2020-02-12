@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addMovie } from '../actions/index'
+import { addMovie, fetchGenres } from '../actions/index'
 import { connect } from 'react-redux'
 
 class MovieNew extends Component {
@@ -14,6 +14,10 @@ class MovieNew extends Component {
         }
     }
 
+    componentDidMount() {
+        {this.props.fetchGenres()}
+    }
+
     handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -24,6 +28,17 @@ class MovieNew extends Component {
         event.preventDefault()
         this.props.addMovie(this.state)
         this.props.history.push('/')
+    }
+
+    populateGenres = () => {
+        return (
+
+                 this.props.genres.map(genre => {
+                        return (
+                            <option value={genre.name} key={genre.id}>{genre.name}</option>
+                        )
+                    })
+        )
     }
 
 
@@ -40,9 +55,9 @@ class MovieNew extends Component {
         
                 <input type="text" name="poster_url" id="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)} placeholder="image link"/>
             
-                <input type="text" name="genre" id="genre" value={this.state.genre} onChange={(event) => this.handleOnChange(event)} placeholder="genre"/>
 
 
+                <select name="genre" id="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
                 
                 <input type="submit" value="Add Movie"></input>
             </form>
@@ -55,5 +70,11 @@ class MovieNew extends Component {
 //         addMovie: movie => dispatch(addMovie(movie))
 //     }
 // }
+const mapStateToProps = state => {
+    return {
+        ...state,
+        genres: state.genreState.genres
+    }
+  }
 
-export default connect(null, { addMovie })(MovieNew)
+export default connect(mapStateToProps, { addMovie, fetchGenres })(MovieNew)
