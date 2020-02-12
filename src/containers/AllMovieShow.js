@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchMovies } from '../actions'
+import { fetchMovies, fetchGenres } from '../actions'
 
 class AllMovieShow extends Component {
 
+    componentDidMount() {
+        this.props.fetchGenres()
+    }
+
     render() {
+        console.log(this.props)
         return (
             <div></div>
         )
@@ -15,13 +20,15 @@ class AllMovieShow extends Component {
 const mapStateToProps = state => {
     return {
       movies: state.movieState.movies,
-      loading: state.movieState.loading
+      loading: state.movieState.loading,
+      genres: state.genreState.genres
     }
   }
 
 const mapDispatchToProps = dispatch => {
     return {
-      fetchMovies: movies => dispatch(fetchMovies(movies))
+      fetchMovies: movies => dispatch(fetchMovies(movies)),
+      fetchGenres: genres => dispatch(fetchGenres(genres))
     }
   }
 
