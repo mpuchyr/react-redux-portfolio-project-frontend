@@ -16,7 +16,7 @@ class Home extends Component {
             return this.props.movies.map(movie => {
                 console.log(movie)
                 const link = `/movies/${movie.id}`
-                return <NavLink to={link} key={movie.id}><img src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
+                return <NavLink to={link} key={movie.id}><img className="poster" src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
             })
         }
     }
