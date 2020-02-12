@@ -30,3 +30,13 @@ export const addMovie = (movie) => {
         })
     }
 }
+
+export const fetchGenres = () => {
+    return (dispatch) => {
+        return fetch('http://localhost:3000/genres')
+        .then(res => res.json())
+        .then(genres => {
+            dispatch({type: "SET_GENRES", payload: genres})
+        })
+    }
+}
