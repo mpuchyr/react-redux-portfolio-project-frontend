@@ -8,8 +8,14 @@ export default(state = {movies: [], loading: false}, action) => {
             }
         case 'SET_MOVIES':
             return {
+                ...state,
                 movies: action.payload,
                 loading: false
+            }
+        case 'ADD_MOVIE':
+            return {
+                ...state,
+                movies: [...state.movies, action.payload],
             }
         default:
             return state
