@@ -5,6 +5,12 @@ import { deleteMovie } from '../actions/index'
 
 class MovieShow extends Component {
 
+    handleOnClick = (event) => {
+        event.preventDefault()
+        this.props.deleteMovie(event.target.id)
+        this.props.history.push('/movies')
+
+    }
 
     showMovie = () => {
         if (this.props.movies.length > 0) {
@@ -16,7 +22,7 @@ class MovieShow extends Component {
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
-                        <button onClick={() => deleteMovie(movie.id)}>Delete</button>
+                        <button id ={movie.id} onClick={event => this.handleOnClick(event)}>Delete</button>
                     </div>
 
                 )
