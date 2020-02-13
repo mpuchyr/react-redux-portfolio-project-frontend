@@ -7,8 +7,13 @@ class MovieShow extends Component {
 
     handleOnClick = (event) => {
         event.preventDefault()
-        this.props.deleteMovie(event.target.id)
-        this.props.history.push('/movies')
+        let answer = window.confirm("This movie will be deleted. Are you sure?")
+        console.log(answer)
+        if (answer === true) {
+            this.props.deleteMovie(event.target.id)
+            this.props.history.push('/movies')
+        }
+
 
     }
 
