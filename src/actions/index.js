@@ -40,3 +40,18 @@ export const fetchGenres = () => {
         })
     }
 }
+
+export const deleteMovie = (movieId) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/movies/${movieId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(movie => {
+            dispatch({type: 'DELETE_MOVIE', payload: movie.id})
+        })
+    }
+}
