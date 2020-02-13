@@ -34,31 +34,35 @@ class AllMovieShow extends Component {
     }
 
     showMoviesInGenre = (genreId) => {
-        let movies = this.props.movies.sort( (a, b) => {
-            let c = a.title
-            let d = b.title
-            
-            if (a.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
-                let aTitle = a.title.split(" ")
-                aTitle.splice(0, 1)
-                c = aTitle.join(" ")
-            }
+        let movies = this.props.movies
+        if (movies.length > 0) {
+            movies = movies.sort( (a, b) => {
+                let c = a.title
+                let d = b.title
+                
 
-            if (b.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
-                let bTitle = b.title.split(" ")
-                bTitle.splice(0, 1)
-                d = bTitle.join(" ")
-            }
-            
+                if (a.title && a.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                    let aTitle = a.title.split(" ")
+                    aTitle.splice(0, 1)
+                    c = aTitle.join(" ")
+                }
 
-            if (c.toLowerCase() > d.toLowerCase()) {
-                return 1
-            } else if (c.toLowerCase() < d.toLowerCase()) {
-                return -1
-            } else {
-                return 0
-            }
-        })
+                if (b.title && b.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                    let bTitle = b.title.split(" ")
+                    bTitle.splice(0, 1)
+                    d = bTitle.join(" ")
+                }
+                
+
+                if (c && c.toLowerCase() > d.toLowerCase()) {
+                    return 1
+                } else if (c && c.toLowerCase() < d.toLowerCase()) {
+                    return -1
+                } else {
+                    return 0
+                }
+            })
+        }
         return movies.map(movie => {
             if (movie.genre_id === genreId) {
                 const link = `/movies/${movie.id}`
