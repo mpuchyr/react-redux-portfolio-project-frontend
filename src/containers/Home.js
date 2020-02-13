@@ -13,6 +13,7 @@ class Home extends Component {
         if (this.props.loading) {
             return <p>Loading...</p>
         } else {
+            
             return this.props.movies.map(movie => {
                 console.log(movie)
                 const link = `/movies/${movie.id}`

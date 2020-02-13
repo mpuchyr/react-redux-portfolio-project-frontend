@@ -34,7 +34,32 @@ class AllMovieShow extends Component {
     }
 
     showMoviesInGenre = (genreId) => {
-        return this.props.movies.map(movie => {
+        let movies = this.props.movies.sort( (a, b) => {
+            let c = a.title
+            let d = b.title
+            
+            if (a.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                let aTitle = a.title.split(" ")
+                aTitle.splice(0, 1)
+                c = aTitle.join(" ")
+            }
+
+            if (b.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                let bTitle = b.title.split(" ")
+                bTitle.splice(0, 1)
+                d = bTitle.join(" ")
+            }
+            
+
+            if (c.toLowerCase() > d.toLowerCase()) {
+                return 1
+            } else if (c.toLowerCase() < d.toLowerCase()) {
+                return -1
+            } else {
+                return 0
+            }
+        })
+        return movies.map(movie => {
             if (movie.genre_id === genreId) {
                 const link = `/movies/${movie.id}`
                 return <NavLink to={link} key={movie.id}><img className="poster" src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
