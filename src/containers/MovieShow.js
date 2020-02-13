@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { deleteMovie } from '../actions/index' 
 
 
 class MovieShow extends Component {
@@ -14,6 +16,7 @@ class MovieShow extends Component {
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
+                        <button onClick={() => deleteMovie(movie.id)}>Delete</button>
                     </div>
 
                 )
@@ -36,6 +39,6 @@ class MovieShow extends Component {
     }
 }
 
+export default connect (null, {deleteMovie})(MovieShow)
 
 
-export default MovieShow
