@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(black, rgb(1, 1, 102));
+  color: white;
 }
 
 code {
@@ -18,4 +20,11 @@ code {
 
 .large-poster {
   height: 600px;
+}
+
+.poster-background {
+  filter: blur(20px);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }

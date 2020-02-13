@@ -17,6 +17,10 @@ class MovieShow extends Component {
 
     }
 
+
+
+
+
     showMovie = () => {
         if (this.props.movies.length > 0) {
             let paramsId = parseInt(this.props.match.params.id, 10)
@@ -40,12 +44,13 @@ class MovieShow extends Component {
     }
 
     render() {
-        
-
         return (   
-            <div>
+            <div className="container">
                 {this.showMovie()}
             </div>
+
+
+
         )
     }
 }
