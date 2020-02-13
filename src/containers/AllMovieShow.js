@@ -11,8 +11,16 @@ class AllMovieShow extends Component {
     }
 
     displayByGenre = () => {
-
-        return this.props.genres.map(genre => {
+        let genres = this.props.genres.sort( (a, b) => {
+            if (a.name < b.name) {
+                return -1
+            } else if (a.name > b.name) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+        return genres.map(genre => {
             return (
                 <div>
                     <h1 key={genre.id}>{genre.name}</h1>
