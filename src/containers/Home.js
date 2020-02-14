@@ -17,7 +17,7 @@ class Home extends Component {
             return <p>Loading...</p>
         } else {
             if (this.props.movies.length > 0) {
-              while (movies.length < 9) {
+              while (movies.length < 10) {
                 let randNum = Math.floor(Math.random() * this.props.movies.length)
                 let movie = this.props.movies[randNum]
                 if (!movies.includes(movie)) {
@@ -37,7 +37,7 @@ class Home extends Component {
         return(
             <div className="movies-container">
                 <h1>Movie Archive</h1>
-                <h2>9 Movie Picks For You</h2>
+                <h3>10 Movie Picks For You</h3>
                 {this.renderMoviePosters()}
             </div>
         )
