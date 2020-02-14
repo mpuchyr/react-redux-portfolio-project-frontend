@@ -6,7 +6,14 @@ import MovieShowBackground from '../components/MovieShowBackground'
 
 class MovieShow extends Component {
 
+    componentDidMount() {
+        this.scrollToTop()
+    }
 
+    scrollToTop = () => {
+        window.scrollTo(0, 0);
+        return null;
+      }
 
     handleOnClick = (event) => {
         event.preventDefault()

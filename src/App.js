@@ -13,6 +13,8 @@ class App extends Component {
     this.props.fetchMovies()
   }
 
+
+
   render() {
 
   
