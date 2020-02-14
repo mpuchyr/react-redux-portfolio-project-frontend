@@ -6,9 +6,9 @@ class NavBar extends Component {
         return (
             <div className="navbar">
                 <NavLink to="/">Home</NavLink>
-                <br />
+
                 <NavLink to="/movies">All Movies</NavLink>
-                <br />
+
                 <NavLink to="/movies/new">Add a Movie</NavLink>
             </div>
         )
