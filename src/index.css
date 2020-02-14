@@ -37,6 +37,11 @@ code {
     width: 80%;
     height: auto;
   }
+
+  .poster {
+    width: 40%;
+    height: auto;
+  }
 }
 
 .poster-background {
