@@ -32,17 +32,7 @@ code {
   height: 600px;
 }
 
-@media only screen and (max-width: 600px) {
-  .large-poster {
-    width: 80%;
-    height: auto;
-  }
 
-  .poster {
-    width: 40%;
-    height: auto;
-  }
-}
 
 .poster-background {
 
@@ -81,5 +71,27 @@ code {
   text-align: center;
 }
 
+.movies-container {
+  width: 80%;
+  margin: auto;
+  align-content: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .large-poster {
+    width: 80%;
+    height: auto;
+  }
+
+  .poster {
+    width: 40%;
+    height: auto;
+  }
+
+  .movies-container {
+    width: 100%
+  }
+}
 
 
