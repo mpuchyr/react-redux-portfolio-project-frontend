@@ -34,7 +34,7 @@ code {
 
 @media only screen and (max-width: 600px) {
   .large-poster {
-    width: 50%;
+    width: 80%;
     height: auto;
   }
 }
