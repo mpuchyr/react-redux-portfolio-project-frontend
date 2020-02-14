@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteMovie } from '../actions/index' 
+import MovieShowBackground from '../components/MovieShowBackground'
 
 
 class MovieShow extends Component {
+
+
 
     handleOnClick = (event) => {
         event.preventDefault()
@@ -13,8 +16,6 @@ class MovieShow extends Component {
             this.props.deleteMovie(event.target.id)
             this.props.history.push('/movies')
         }
-
-
     }
 
 
@@ -27,12 +28,12 @@ class MovieShow extends Component {
             let movie = this.props.movies.find(movie => movie.id === paramsId)
             if (movie) {
                 return (
-                    <div>
+                    <>
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
                         <button id ={movie.id} onClick={event => this.handleOnClick(event)}>Delete</button>
-                    </div>
+                    </>
 
                 )
             } else {
@@ -45,8 +46,11 @@ class MovieShow extends Component {
 
     render() {
         return (   
-            <div className="container">
-                {this.showMovie()}
+            <div className="main">
+                <MovieShowBackground movies={this.props.movies} id={this.props.match.params.id}/>
+                 <div className="container">
+                    {this.showMovie()}
+                </div>
             </div>
 
 
