@@ -99,6 +99,7 @@ code {
 }
 
 .navbar {
+  z-index: 3;
   overflow: hidden;
   background-color: #333;
   position: fixed; /* Set the navbar to fixed position */

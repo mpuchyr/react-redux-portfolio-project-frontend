@@ -53,12 +53,12 @@ class MovieShow extends Component {
 
     render() {
         return (   
-            <div className="main">
+            <>
                 <MovieShowBackground movies={this.props.movies} id={this.props.match.params.id}/>
                  <div className="container">
                     {this.showMovie()}
                 </div>
-            </div>
+            </>
 
 
 
