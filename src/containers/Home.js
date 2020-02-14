@@ -35,7 +35,7 @@ class Home extends Component {
 
     render() {
         return(
-            <div>
+            <div className="movies-container">
                 <h1>Movie Archive</h1>
                 <h2>9 Movie Picks For You</h2>
                 {this.renderMoviePosters()}

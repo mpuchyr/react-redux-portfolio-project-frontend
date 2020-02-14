@@ -18,9 +18,12 @@ code {
 }
 
 .poster {
+
   height: 400px;
   width: 252.398px;
+
   cursor: pointer;
+
   margin: 10px;
 }
 
@@ -64,4 +67,6 @@ code {
   padding: 20px;
   text-align: center;
 }
+
+
 

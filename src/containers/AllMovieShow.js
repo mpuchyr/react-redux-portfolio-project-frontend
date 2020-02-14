@@ -39,15 +39,16 @@ class AllMovieShow extends Component {
             movies = movies.sort( (a, b) => {
                 let c = a.title
                 let d = b.title
+                const firstWord = ["a", "an", "the"]
                 
 
-                if (a.title && a.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                if (a.title && firstWord.includes(a.title.split(" ")[0].toLowerCase())) {
                     let aTitle = a.title.split(" ")
                     aTitle.splice(0, 1)
                     c = aTitle.join(" ")
                 }
 
-                if (b.title && b.title.split(" ")[0].toLowerCase() === "The".toLowerCase()) {
+                if (b.title && firstWord.includes(b.title.split(" ")[0].toLowerCase())) {
                     let bTitle = b.title.split(" ")
                     bTitle.splice(0, 1)
                     d = bTitle.join(" ")
