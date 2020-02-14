@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Router>
         <NavBar />
-        <div>
+        <div className="main-container">
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route exact path="/movies" component={ AllMovieShow } />

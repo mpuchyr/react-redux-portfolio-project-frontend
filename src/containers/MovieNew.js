@@ -53,6 +53,7 @@ class MovieNew extends Component {
 
     render() {
         return (
+
             <form onSubmit={this.handleOnSubmit}>
                 <h3>Add a Movie</h3>
         
@@ -70,6 +71,7 @@ class MovieNew extends Component {
                 
                 <input type="submit" value="Add Movie"></input>
             </form>
+
         )
     }
 }
