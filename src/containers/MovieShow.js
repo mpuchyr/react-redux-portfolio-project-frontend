@@ -3,11 +3,17 @@ import { connect } from 'react-redux'
 import { deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
 
+let html = document.querySelector('html')
 
 class MovieShow extends Component {
 
     componentDidMount() {
         this.scrollToTop()
+        html.style.overflow = "hidden"
+    }
+
+    componentWillUnmount() {
+        html.style.overflow = "auto"
     }
 
     scrollToTop = () => {

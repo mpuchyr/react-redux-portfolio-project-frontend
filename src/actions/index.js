@@ -17,10 +17,13 @@ export const addMovie = (movie) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                title: movie.title,
-                synopsis: movie.synopsis,
-                poster_url: movie.poster_url,
-                genre: movie.genre
+                movie: {
+                    title: movie.title,
+                    synopsis: movie.synopsis,
+                    poster_url: movie.poster_url,
+                    genre: movie.genre
+                }
+
             })
         })
         .then(res => res.json())

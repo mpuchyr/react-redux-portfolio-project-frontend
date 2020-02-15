@@ -10,6 +10,7 @@ html {
 
   color: white;
   height: 100%;
+
 }
 
 body {
@@ -19,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 
 }
 
@@ -58,6 +60,7 @@ code {
   background-repeat: no-repeat;
   background-size: cover;
 
+  overflow: hidden;
 }
 
 .poster-background img {
@@ -100,6 +103,11 @@ code {
 
   .movies-container {
     width: 100%
+  }
+
+  .poster-background {
+    height: 100%;
+    width: 700px;
   }
 }
 
