@@ -44,6 +44,7 @@ class Home extends Component {
     }
 }
 
+
 const mapStateToProps = state => {
     return {
       movies: state.movieState.movies,
