@@ -53,24 +53,25 @@ class MovieNew extends Component {
 
     render() {
         return (
-
-            <form onSubmit={this.handleOnSubmit}>
-                <h3>Add a Movie</h3>
-        
-                <input type="text" name="title" id="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)} placeholder="title"/>
+            <div className="form-container">
+                <form onSubmit={this.handleOnSubmit}>
+                    <h3>Add a Movie</h3>
             
-        
-                <input type="text" name="synopsis" id="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)} placeholder="synopsis"/>
+                    <input type="text" name="title" id="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)} placeholder="title"/>
+                    <br />
             
-        
-                <input type="text" name="poster_url" id="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)} placeholder="image link"/>
-            
+                    <input type="text" name="synopsis" id="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)} placeholder="synopsis"/>
+                    <br />
+
+                    <input type="text" name="poster_url" id="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)} placeholder="image link"/>
+                    <br />
 
 
-                <select name="genre" id="genre" placeholder="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
-                
-                <input type="submit" value="Add Movie"></input>
-            </form>
+                    <select name="genre" id="genre" placeholder="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
+                    <br />
+                    <input type="submit" value="Add Movie"></input>
+                </form>
+            </div>
 
         )
     }
