@@ -25,7 +25,7 @@ class AllMovieShow extends Component {
             return (
                 <div>
                     <a name={genre.name}></a>
-                    <br></br>
+                    <br />
                     <h1 key={genre.id}>{genre.name}</h1>
                 
                     {this.showMoviesInGenre(genre.id)}
@@ -75,11 +75,16 @@ class AllMovieShow extends Component {
         })
     }
 
+    handleOnClick = (event) => {
+        console.log(event.target.id)
+    }
+
     render() {
         return (
             <div className="movies-container">
                 <GenreNavBar genres={this.props.genres} />
                 {this.displayByGenre()}
+                <button id="to-top-button" onClick={event => this.handleOnClick(event)}>Back to Top</button>
             </div>
         )
     }
