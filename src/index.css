@@ -164,3 +164,11 @@ form input[type=text] {
   padding: 15px;
   border-radius: 4px;
 }
+
+.genre-nav-bar button{
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
