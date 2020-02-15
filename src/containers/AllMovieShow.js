@@ -32,6 +32,7 @@ class AllMovieShow extends Component {
                 <div>
                     <a name={genre.name}></a>
                     <br />
+                    <br />
                     <h1 key={genre.id}>{genre.name}</h1>
                 
                     {this.showMoviesInGenre(genre.id)}
