@@ -24,7 +24,9 @@ class AllMovieShow extends Component {
         return genres.map(genre => {
             return (
                 <div>
-                    <h1 key={genre.id}><a name={genre.name}>{genre.name}</a></h1>
+                    <a name={genre.name}></a>
+                    <br></br>
+                    <h1 key={genre.id}>{genre.name}</h1>
                 
                     {this.showMoviesInGenre(genre.id)}
                 </div>
