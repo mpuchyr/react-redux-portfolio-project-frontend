@@ -16,6 +16,7 @@ class AllMovieShow extends Component {
         topBtn = document.querySelector('#to-top-button')
     }
 
+
     displayByGenre = () => {
         let genres = this.props.genres.sort( (a, b) => {
             if (a.name < b.name) {
@@ -86,7 +87,7 @@ class AllMovieShow extends Component {
     }
 
     handleOnScroll = () => {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             topBtn.style.display = "block"
         } else {
             topBtn.style.display = "none"

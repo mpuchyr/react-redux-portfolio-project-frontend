@@ -150,7 +150,7 @@ form input[type=text] {
 }
 
 #to-top-button {
-  /* display: none; */
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 30px;
