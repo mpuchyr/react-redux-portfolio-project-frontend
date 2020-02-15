@@ -76,7 +76,8 @@ class AllMovieShow extends Component {
     }
 
     handleOnClick = (event) => {
-        console.log(event.target.id)
+        window.scrollTo(0, 0);
+        return null;
     }
 
     render() {
