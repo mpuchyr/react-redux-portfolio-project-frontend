@@ -4,11 +4,16 @@ import { connect } from 'react-redux'
 import { fetchMovies, fetchGenres } from '../actions'
 import GenreNavBar from '../components/GenreNavBar'
 
+
+let topBtn = ''
+
+
 class AllMovieShow extends Component {
 
     componentDidMount() {
         this.props.fetchMovies()
         this.props.fetchGenres()
+        topBtn = document.querySelector('#to-top-button')
     }
 
     displayByGenre = () => {
@@ -80,7 +85,16 @@ class AllMovieShow extends Component {
         return null;
     }
 
+    handleOnScroll = () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topBtn.style.display = "block"
+        } else {
+            topBtn.style.display = "none"
+        }
+    }
+
     render() {
+        window.onscroll = () => {this.handleOnScroll()}
         return (
             <div className="movies-container">
                 <GenreNavBar genres={this.props.genres} />
