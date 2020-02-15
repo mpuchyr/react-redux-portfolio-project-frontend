@@ -17,8 +17,6 @@ class GenreNavBar extends Component {
             return (
                 <>
                     <a href={genreLink}><button>{genre.name}</button></a>
-                
-                    {this.showMoviesInGenre(genre.id)}
                 </>
             )
                 

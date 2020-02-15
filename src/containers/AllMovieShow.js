@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchMovies, fetchGenres } from '../actions'
+import GenreNavBar from '../components/GenreNavBar'
 
 class AllMovieShow extends Component {
 
@@ -75,6 +76,7 @@ class AllMovieShow extends Component {
     render() {
         return (
             <div className="movies-container">
+                <GenreNavBar genres={this.props.genres} />
                 {this.displayByGenre()}
             </div>
         )
