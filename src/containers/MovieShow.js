@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
+import MovieEdit from './MovieEdit'
+
 
 let html = document.querySelector('html')
 
@@ -45,6 +47,7 @@ class MovieShow extends Component {
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
+                        <button id="edit-button">Edit</button>
                         <button id ={movie.id} onClick={event => this.handleOnClick(event)}>Delete</button>
                     </>
 

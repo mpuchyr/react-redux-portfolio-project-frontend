@@ -6,6 +6,7 @@ import Home from './containers/Home'
 import MovieShow from './containers/MovieShow'
 import MovieNew from './containers/MovieNew'
 import AllMovieShow from './containers/AllMovieShow'
+import MovieEdit from './containers/MovieEdit'
 import { fetchMovies } from './actions'
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/movies" component={ AllMovieShow } />
             <Route exact path="/movies/new" component={ MovieNew } />
             <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
+            <Route exact path="/movies/:id/edit" render={props => <MovieEdit {...props} movies={this.props.movies}/>} />
           </Switch>
         </div>
       </Router>
