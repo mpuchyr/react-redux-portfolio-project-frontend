@@ -72,10 +72,16 @@ class MovieEdit extends PureComponent {
             <div className="form-container">  
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                     <h3>Edit Movie</h3>
+                    <label>Title: </label>
                     <input type="text" name="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)}></input>
+                    <br />
+                    <label>Synopsis: </label>
                     <input type="text" name="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)}></input>
+                    <br />
+                    <label>Image: </label>
                     <input type="text" name="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)}></input>
                     <br />
+                    <label>Genre: </label>
                     <select name="genre_id" id="genre" placeholder="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
                     <br />
                     <input type="submit" value="Submit"></input>
