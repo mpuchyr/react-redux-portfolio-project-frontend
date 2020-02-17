@@ -172,3 +172,21 @@ form input[type=text] {
   cursor: pointer;
   font-size: 20px;
 }
+
+button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
