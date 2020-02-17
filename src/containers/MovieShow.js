@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { deleteMovie } from '../actions/index' 
+import { fetchMovies, deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
 
 
@@ -11,6 +11,7 @@ let html = document.querySelector('html')
 class MovieShow extends Component {
 
     componentDidMount() {
+
         this.props.fetchMovies()
         this.scrollToTop()  
         html.style.overflow = "hidden"
@@ -65,7 +66,6 @@ class MovieShow extends Component {
     }
 
     render() {
-
         return (   
             <>
                 <MovieShowBackground movies={this.props.movies} id={this.props.match.params.id}/>
@@ -88,6 +88,6 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, {deleteMovie})(MovieShow)
+export default connect (mapStateToProps, {fetchMovies, deleteMovie})(MovieShow)
 
 

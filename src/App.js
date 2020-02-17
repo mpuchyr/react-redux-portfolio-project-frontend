@@ -10,9 +10,9 @@ import MovieEdit from './containers/MovieEdit'
 import { fetchMovies } from './actions'
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchMovies()
-  }
+  // componentDidMount() {
+  //   this.props.fetchMovies()
+  // }
 
 
 
@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/" component={ Home } />
             <Route exact path="/movies" component={ AllMovieShow } />
             <Route exact path="/movies/new" component={ MovieNew } />
-            <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies} fetchMovies={this.props.fetchMovies}/>} />
+            <Route exact path="/movies/:id" component={ MovieShow } />
             <Route exact path="/movies/:id/edit" component={ MovieEdit } />
           </Switch>
         </div>
@@ -39,20 +39,20 @@ class App extends Component {
 
 
 
-const mapStateToProps = state => {
-  return {
-    movies: state.movieState.movies,
-    loading: state.movieState.loading
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     movies: state.movieState.movies,
+//     loading: state.movieState.loading
+//   }
+// }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchMovies: movies => dispatch(fetchMovies(movies))
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchMovies: movies => dispatch(fetchMovies(movies))
+//   }
+// }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+// export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
 
-{/* <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} /> */}

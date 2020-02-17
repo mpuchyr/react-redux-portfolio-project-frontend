@@ -28,7 +28,6 @@ export const addMovie = (movie) => {
         })
         .then(res => res.json())
         .then(movie => {
-            console.log(movie)
             dispatch({type: "ADD_MOVIE", payload: movie})
         })
     }
@@ -79,8 +78,7 @@ export const editMovie = (movie) => {
         })
         .then(res => res.json())
         .then(movie => {
-            console.log(movie)
-            dispatch({type: "EDIT_MOVIE", payload: movie})
+            return dispatch({type: "EDIT_MOVIE", payload: movie})
         })
     }
 }
