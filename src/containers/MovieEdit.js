@@ -57,9 +57,16 @@ class MovieEdit extends PureComponent {
         return (
 
                  genres.map(genre => {
-                        return (
-                            <option value={genre.id} key={genre.id}>{genre.name}</option>
-                        )
+                        if (genre.id === this.state.genre_id) {
+                            return (
+                                <option value={genre.id} key={genre.id} selected>{genre.name}</option>
+                            )
+                        } else {
+                            return (
+                                <option value={genre.id} key={genre.id}>{genre.name}</option>
+                            )
+                        }
+
                     })
         )
     }
