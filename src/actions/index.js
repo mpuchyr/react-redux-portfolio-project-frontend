@@ -71,7 +71,8 @@ export const editMovie = (movie) => {
                     title: movie.title,
                     synopsis: movie.synopsis,
                     poster_url: movie.poster_url,
-                    genre: movie.genre
+                    genre_id: movie.genre_id,
+                    id: movie.id
                 }
 
             })

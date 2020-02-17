@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
-import { fetchGenres, fetchMovies } from '../actions/index'
+import { fetchGenres, fetchMovies, editMovie } from '../actions/index'
 import { connect } from 'react-redux'
+
 
 
 class MovieEdit extends PureComponent {
@@ -37,6 +38,12 @@ class MovieEdit extends PureComponent {
         })
     }
 
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.props.editMovie(this.state)
+        this.props.history.push('/movies')
+    }
+
     populateGenres = () => {
         let genres = this.props.genres.sort( (a, b) => {
             if (a.name < b.name) {
@@ -60,11 +67,10 @@ class MovieEdit extends PureComponent {
 
 
     render() {
-        console.log(this.state)
         return (
             
             <div>  
-                <form>
+                <form onSubmit={(event) => this.handleOnSubmit(event)}>
                     <input type="text" name="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)}></input>
@@ -90,7 +96,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
       fetchMovies: movies => dispatch(fetchMovies(movies)),
-      fetchGenres: genres => dispatch(fetchGenres(genres))
+      fetchGenres: genres => dispatch(fetchGenres(genres)),
+      editMovie: movie => dispatch(editMovie(movie))
     }
   }
 
