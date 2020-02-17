@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
-import MovieEdit from './MovieEdit'
+
+
 
 
 let html = document.querySelector('html')
@@ -11,9 +12,10 @@ let html = document.querySelector('html')
 class MovieShow extends Component {
 
     componentDidMount() {
-        this.scrollToTop()
+        this.scrollToTop()       
         html.style.overflow = "hidden"
     }
+
 
     componentWillUnmount() {
         html.style.overflow = "auto"
@@ -35,15 +37,16 @@ class MovieShow extends Component {
     }
 
 
-    // <NavLink to={link} key={movie.id}><img className="poster" src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
 
 
     showMovie = () => {
+
         if (this.props.movies.length > 0) {
             let paramsId = parseInt(this.props.match.params.id, 10)
             let movie = this.props.movies.find(movie => movie.id === paramsId)
-            let link = `/movies/${movie.id}/edit`
+
             if (movie) {
+                let link = `/movies/${movie.id}/edit`
                 return (
                     <>
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
@@ -63,6 +66,7 @@ class MovieShow extends Component {
     }
 
     render() {
+
         return (   
             <>
                 <MovieShowBackground movies={this.props.movies} id={this.props.match.params.id}/>
@@ -76,6 +80,8 @@ class MovieShow extends Component {
         )
     }
 }
+
+
 
 export default connect (null, {deleteMovie})(MovieShow)
 

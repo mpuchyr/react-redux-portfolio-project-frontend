@@ -37,6 +37,8 @@ class App extends Component {
   }
 }
 
+
+
 const mapStateToProps = state => {
   return {
     movies: state.movieState.movies,
@@ -53,3 +55,4 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 
+{/* <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} /> */}
