@@ -58,3 +58,28 @@ export const deleteMovie = (movieId) => {
         })
     }
 }
+
+export const editMovie = (movie) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/movies/${movie.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                movie: {
+                    title: movie.title,
+                    synopsis: movie.synopsis,
+                    poster_url: movie.poster_url,
+                    genre: movie.genre
+                }
+
+            })
+        })
+        .then(res => res.json())
+        .then(movie => {
+            console.log(movie)
+            dispatch({type: "EDIT_MOVIE", payload: movie})
+        })
+    }
+}
