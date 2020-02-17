@@ -41,7 +41,7 @@ class MovieEdit extends PureComponent {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.editMovie(this.state)
-        this.props.history.push(`/movies/${this.state.id}`)
+        this.props.history.push(`/movies`)
     }
 
     populateGenres = () => {
@@ -69,12 +69,14 @@ class MovieEdit extends PureComponent {
     render() {
         return (
             
-            <div>  
+            <div className="form-container">  
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                     <input type="text" name="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)}></input>
+                    <br />
                     <select name="genre_id" id="genre" placeholder="genre" onChange={(event) => this.handleOnChange(event)}>{this.populateGenres()}</select>
+                    <br />
                     <input type="submit" value="Submit"></input>
                 </form>
             </div>
