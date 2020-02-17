@@ -1,4 +1,8 @@
+IMPORTANT: This app requires https://github.com/mpuchyr/react-redux-portfolio-project-backend to work properly.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+You may need to run yarn install to install the necessary dependencies.
 
 ## Available Scripts
 
