@@ -13,6 +13,10 @@ class AllMovieShow extends Component {
     componentDidMount() {
         this.props.fetchMovies()
         this.props.fetchGenres()
+        .catch(err => {
+            let container = document.querySelector('.main-container')
+            container.innerText = "Something went wrong. Could not connect to the database. Please try again later."
+        })
         topBtn = document.querySelector('#to-top-button')
     }
 
