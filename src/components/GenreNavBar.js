@@ -16,7 +16,7 @@ class GenreNavBar extends Component {
             let genreLink = `#${genre.name}` 
             return (
                 <>
-                    <a href={genreLink}><button>{genre.name}</button></a>
+                    <a href={genreLink} key={genre.name}><button>{genre.name}</button></a>
                 </>
             )
                 

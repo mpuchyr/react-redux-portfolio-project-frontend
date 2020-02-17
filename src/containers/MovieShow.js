@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { fetchMovies, deleteMovie } from '../actions/index' 
+import { fetchMovies, fetchGenres, deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
 
 
@@ -13,6 +13,7 @@ class MovieShow extends Component {
     componentDidMount() {
 
         this.props.fetchMovies()
+        this.props.fetchGenres()
         this.scrollToTop()  
         html.style.overflow = "hidden"
     }
@@ -37,6 +38,16 @@ class MovieShow extends Component {
         }
     }
 
+    findGenre = (movie) => {
+        let genre = this.props.genres.find(genre => genre.id === movie.genre_id)
+        if (genre) {
+            return (
+                <h3>{genre.name}</h3>
+            )
+        }
+
+    }
+
 
 
 
@@ -51,6 +62,7 @@ class MovieShow extends Component {
                     <>
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
+                        {this.findGenre(movie)}
                         <p>{movie.synopsis}</p>
                         <button id="edit-button"><NavLink to={link}>Edit</NavLink></button>
                         <button id ={movie.id} onClick={event => this.handleOnClick(event)}>Delete</button>
@@ -88,6 +100,6 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect (mapStateToProps, {fetchMovies, deleteMovie})(MovieShow)
+export default connect(mapStateToProps, {fetchMovies, fetchGenres, deleteMovie})(MovieShow)
 
 
