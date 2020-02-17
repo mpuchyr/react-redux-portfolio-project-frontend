@@ -19,6 +19,13 @@ export default(state = {movies: [], loading: false}, action) => {
             }    
         
             return newState
+        case 'EDIT_MOVIE':
+            let newEditState = {
+                ...state,
+                movies: [...state.movies, action.payload]
+            }
+
+            return newEditState
         case 'DELETE_MOVIE':
             let newMovies = state.movies.filter(movie => movie.id !== action.payload)
             let newMovieState = {
