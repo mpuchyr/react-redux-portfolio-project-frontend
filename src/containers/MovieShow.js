@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { deleteMovie } from '../actions/index' 
 import MovieShowBackground from '../components/MovieShowBackground'
 import MovieEdit from './MovieEdit'
@@ -34,20 +35,21 @@ class MovieShow extends Component {
     }
 
 
-
+    // <NavLink to={link} key={movie.id}><img className="poster" src={movie.poster_url} key={movie.id} alt={movie.title}></img></NavLink>
 
 
     showMovie = () => {
         if (this.props.movies.length > 0) {
             let paramsId = parseInt(this.props.match.params.id, 10)
             let movie = this.props.movies.find(movie => movie.id === paramsId)
+            let link = `/movies/${movie.id}/edit`
             if (movie) {
                 return (
                     <>
                         <img className="large-poster" src={movie.poster_url} alt={movie.title}></img>
                         <h1>{movie.title}</h1>
                         <p>{movie.synopsis}</p>
-                        <button id="edit-button">Edit</button>
+                        <button id="edit-button"><NavLink to={link}>Edit</NavLink></button>
                         <button id ={movie.id} onClick={event => this.handleOnClick(event)}>Delete</button>
                     </>
 
