@@ -41,7 +41,7 @@ class MovieEdit extends PureComponent {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.editMovie(this.state)
-        this.props.history.push(`/movies`)
+        this.props.history.push(`/movies/${this.state.id}`)
     }
 
     populateGenres = () => {

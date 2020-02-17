@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/" component={ Home } />
             <Route exact path="/movies" component={ AllMovieShow } />
             <Route exact path="/movies/new" component={ MovieNew } />
-            <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
+            <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies} fetchMovies={this.props.fetchMovies}/>} />
             <Route exact path="/movies/:id/edit" component={ MovieEdit } />
           </Switch>
         </div>

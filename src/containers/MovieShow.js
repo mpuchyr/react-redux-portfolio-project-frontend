@@ -6,13 +6,13 @@ import MovieShowBackground from '../components/MovieShowBackground'
 
 
 
-
 let html = document.querySelector('html')
 
 class MovieShow extends Component {
 
     componentDidMount() {
-        this.scrollToTop()       
+        this.props.fetchMovies()
+        this.scrollToTop()  
         html.style.overflow = "hidden"
     }
 
@@ -40,7 +40,6 @@ class MovieShow extends Component {
 
 
     showMovie = () => {
-
         if (this.props.movies.length > 0) {
             let paramsId = parseInt(this.props.match.params.id, 10)
             let movie = this.props.movies.find(movie => movie.id === paramsId)
