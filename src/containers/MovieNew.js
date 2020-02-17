@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { addMovie, fetchGenres } from '../actions/index'
 import { connect } from 'react-redux'
 
+let html = document.querySelector('html')
+
 class MovieNew extends Component {
     constructor(props) {
         super(props)
@@ -16,6 +18,12 @@ class MovieNew extends Component {
 
     componentDidMount() {
         {this.props.fetchGenres()}
+        html.style.overflow = "hidden"
+        
+    }
+
+    componentWillUnmount() {
+        html.style.overflow = "auto"
     }
 
     handleOnChange = (event) => {

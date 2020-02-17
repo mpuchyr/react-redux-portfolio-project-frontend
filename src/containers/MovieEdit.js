@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { fetchGenres, fetchMovies, editMovie } from '../actions/index'
 import { connect } from 'react-redux'
 
-
+let html = document.querySelector("html")
 
 class MovieEdit extends PureComponent {
 
@@ -28,8 +28,12 @@ class MovieEdit extends PureComponent {
             })
         })
         this.props.fetchGenres()
+        html.style.overflow = "hidden"
     }
 
+    componentWillUnmount() {
+        html.style.overflow = "auto"
+    }
 
 
     handleOnChange = (event) => {
