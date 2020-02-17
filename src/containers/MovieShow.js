@@ -80,8 +80,14 @@ class MovieShow extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+      movies: state.movieState.movies,
+      loading: state.movieState.loading,
+      genres: state.genreState.genres
+    }
+  }
 
-
-export default connect (null, {deleteMovie})(MovieShow)
+export default connect (mapStateToProps, {deleteMovie})(MovieShow)
 
 
