@@ -85,11 +85,7 @@ class MovieNew extends Component {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         addMovie: movie => dispatch(addMovie(movie))
-//     }
-// }
+
 const mapStateToProps = state => {
     return {
         ...state,
