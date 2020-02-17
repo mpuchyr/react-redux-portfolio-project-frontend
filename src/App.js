@@ -29,7 +29,7 @@ class App extends Component {
             <Route exact path="/movies" component={ AllMovieShow } />
             <Route exact path="/movies/new" component={ MovieNew } />
             <Route exact path="/movies/:id" render={ props => <MovieShow {...props} movies={this.props.movies}/>} />
-            <Route exact path="/movies/:id/edit" render={props => <MovieEdit {...props} movies={this.props.movies}/>} />
+            <Route exact path="/movies/:id/edit" component={ MovieEdit } />
           </Switch>
         </div>
       </Router>
