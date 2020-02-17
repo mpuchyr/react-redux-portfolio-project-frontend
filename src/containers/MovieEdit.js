@@ -71,6 +71,7 @@ class MovieEdit extends PureComponent {
             
             <div className="form-container">  
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <h3>Edit Movie</h3>
                     <input type="text" name="title" value={this.state.title} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="synopsis" value={this.state.synopsis} onChange={(event) => this.handleOnChange(event)}></input>
                     <input type="text" name="poster_url" value={this.state.poster_url} onChange={(event) => this.handleOnChange(event)}></input>
