@@ -17,12 +17,13 @@ class MovieNew extends Component {
     }
 
     componentDidMount() {
-        {this.props.fetchGenres()}
+        this.props.fetchGenres()
         html.style.overflow = "hidden"
         
     }
 
     componentWillUnmount() {
+
         html.style.overflow = "auto"
     }
 

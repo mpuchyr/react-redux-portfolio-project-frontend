@@ -7,6 +7,10 @@ import { fetchMovies } from '../actions'
 class Home extends Component {
     componentDidMount() {
         this.props.fetchMovies()
+        .catch(err => {
+          let container = document.querySelector('.main-container')
+          container.innerText = "Something went wrong. Coult not connect to database. Please try again later."
+        })
       }
     
 
